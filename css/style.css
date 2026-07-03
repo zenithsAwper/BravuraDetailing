@@ -576,6 +576,16 @@ h1, h2, h3, p, ul, figure { margin: 0; }
 .trust-strip .container { padding: 22px 40px; display: flex; flex-wrap: wrap; gap: 14px 48px; align-items: center; }
 .trust-strip span.item { font-family: var(--font-display); text-transform: uppercase; font-size: 12px; letter-spacing: 1.4px; color: var(--chrome-3); }
 .trust-strip span.sep { color: var(--graphite); }
+@media (max-width: 700px) {
+  .trust-strip .container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    padding: 20px 24px;
+  }
+  .trust-strip span.sep { display: none; }
+}
 
 .cta-section {
   position: relative;

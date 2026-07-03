@@ -342,6 +342,189 @@ h1, h2, h3, p, ul, figure { margin: 0; }
   .nav-cta { display: none !important; }
 }
 
+/* ---- Services mega-dropdown (desktop) ---- */
+/* .nav-item spans the full nav height so hovering down to the dropdown's
+   fixed top edge never crosses a dead zone and drops the hover state. */
+.nav-item { position: relative; height: 72px; display: flex; align-items: center; }
+.nav-item .nav-link[aria-haspopup] { display: inline-flex; align-items: center; gap: 6px; }
+.nav-caret { width: 8px; height: 8px; flex-shrink: 0; transition: transform var(--dur) var(--ease); }
+.nav-item:hover .nav-caret,
+.nav-item:focus-within .nav-caret,
+.nav-item.dropdown-open .nav-caret { transform: rotate(180deg); }
+/* Fixed (viewport-relative) rather than absolute (trigger-relative) so the
+   panel always centers on the page instead of on the "Services" link's own
+   position, which sits left-of-center and would otherwise clip offscreen. */
+.nav-dropdown {
+  position: fixed;
+  top: 72px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity var(--dur) var(--ease);
+  z-index: 200;
+}
+.nav-item:hover .nav-dropdown,
+.nav-item:focus-within .nav-dropdown,
+.nav-item.dropdown-open .nav-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+.nav-dropdown__panel {
+  background-color: rgba(0,0,0,0.97);
+  border: 1px solid var(--border-hairline);
+  padding: 32px;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(150px, 190px));
+  gap: 32px;
+  max-width: calc(100vw - 48px);
+}
+.nav-dropdown__col { display: flex; flex-direction: column; gap: 2px; }
+.nav-dropdown__heading {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--gold-text);
+  text-decoration: none;
+  padding-bottom: 10px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid var(--border-hairline);
+  transition: color var(--dur) var(--ease);
+}
+.nav-dropdown__heading:hover { color: var(--gold); }
+.nav-dropdown__link {
+  font-family: var(--font-body);
+  font-size: 14px;
+  color: var(--chrome-3);
+  text-decoration: none;
+  padding: 7px 0;
+  transition: color var(--dur) var(--ease);
+}
+.nav-dropdown__link:hover { color: #fff; }
+@media (max-width: 940px) {
+  .nav-dropdown { display: none; }
+}
+
+/* ---- Services accordion (mobile) ---- */
+.mobile-dropdown-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border-hairline);
+}
+.mobile-dropdown-row a { border-bottom: none; flex: 1; }
+.mobile-submenu-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 14px 4px 14px 14px;
+  color: var(--chrome-3);
+  display: flex;
+  align-items: center;
+}
+.mobile-submenu-toggle svg { transition: transform var(--dur) var(--ease); }
+.mobile-submenu-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+.mobile-submenu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--dur-slow) var(--ease);
+}
+.mobile-submenu.open { max-height: 900px; }
+.mobile-menu .mobile-submenu a {
+  padding: 10px 0 10px 20px;
+  font-family: var(--font-body);
+  text-transform: none;
+  font-size: 14px;
+  letter-spacing: normal;
+  color: var(--ash);
+  border-bottom: 1px solid var(--border-hairline);
+}
+.mobile-menu .mobile-submenu li.mobile-submenu__heading a {
+  padding-left: 0;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  color: var(--gold-text);
+}
+
+/* ---- Sub-service cards (Services page) ---- */
+section[id] { scroll-margin-top: 90px; }
+.subservice-grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+.subservice-grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+@media (max-width: 820px) {
+  .subservice-grid-2, .subservice-grid-3 { grid-template-columns: 1fr; }
+}
+.subservice-card {
+  background-color: var(--charcoal);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  scroll-margin-top: 90px;
+}
+.subservice-card > .btn { margin-top: auto; }
+.subservice-card h4 { font-family: var(--font-display); text-transform: uppercase; font-size: 19px; font-weight: 400; color: #fff; }
+.subservice-card p { font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; color: var(--ash); }
+.subservice-card ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
+.subservice-card li { font-family: var(--font-body); font-size: 14px; color: var(--ash); display: flex; gap: 8px; }
+.subservice-card li span { color: var(--gold); flex-shrink: 0; }
+.price-placeholder {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: var(--steel);
+  border: 1px solid var(--border-hairline);
+  padding: 5px 10px;
+}
+.price-tag {
+  align-self: flex-start;
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  color: var(--gold-text);
+  border: 1px solid rgba(255,192,0,.4);
+  padding: 5px 10px;
+}
+.subservice-card .tier-pricing {
+  list-style: none;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border: 1px solid rgba(255,192,0,.25);
+  padding: 12px 14px;
+}
+.subservice-card .tier-pricing li {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  font-size: 13.5px;
+  color: var(--chrome-3);
+}
+.subservice-card .tier-pricing li span { color: var(--chrome-3); }
+.tier-pricing strong {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: .5px;
+  color: var(--gold-text);
+  white-space: nowrap;
+}
+.subservice-intro { max-width: 640px; margin: 0 auto 28px; text-align: center; }
+.subservice-intro p { font-family: var(--font-body); font-size: 15px; line-height: 1.6; color: var(--ash); margin: 10px 0 0; }
+.subservice-intro h3 { font-family: var(--font-display); text-transform: uppercase; font-size: 13px; letter-spacing: 1px; color: var(--chrome-3); }
+
 /* ================= FOOTER ================= */
 .site-footer {
   background-color: var(--iron);

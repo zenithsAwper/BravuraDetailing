@@ -17,7 +17,35 @@
     <ul class="nav-links">
       <li><a href="index.html" class="nav-link">Home</a></li>
       <li><a href="about.html" class="nav-link">About</a></li>
-      <li><a href="services.html" class="nav-link active" aria-current="page">Services</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="services.html" class="nav-link active" aria-current="page" aria-haspopup="true" aria-expanded="false">Services <svg class="nav-caret" width="8" height="6" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        <div class="nav-dropdown">
+          <div class="nav-dropdown__panel">
+            <div class="nav-dropdown__col">
+              <a href="services.html#full-detail" class="nav-dropdown__heading">Vehicle Detail</a>
+              <a href="services.html#interior-detail" class="nav-dropdown__link">Interior Detail</a>
+              <a href="services.html#exterior-detail" class="nav-dropdown__link">Exterior Detail</a>
+              <a href="services.html#full-car-detail" class="nav-dropdown__link">Full Car Detail</a>
+            </div>
+            <div class="nav-dropdown__col">
+              <a href="services.html#paint-correction" class="nav-dropdown__heading">Paint Correction</a>
+              <a href="services.html#paint-correction-sedan" class="nav-dropdown__link">Sedan</a>
+              <a href="services.html#paint-correction-suv-truck" class="nav-dropdown__link">SUV / Truck</a>
+            </div>
+            <div class="nav-dropdown__col">
+              <a href="services.html#ceramic-coating" class="nav-dropdown__heading">Ceramic Coating</a>
+              <a href="services.html#ceramic-coating-paint" class="nav-dropdown__link">Paint</a>
+              <a href="services.html#ceramic-coating-glass" class="nav-dropdown__link">Glass</a>
+              <a href="services.html#ceramic-coating-trim" class="nav-dropdown__link">Trim</a>
+            </div>
+            <div class="nav-dropdown__col">
+              <a href="services.html#maintenance-detail" class="nav-dropdown__heading">Maintenance</a>
+              <a href="services.html#regular-maintenance" class="nav-dropdown__link">Monthly Maintenance</a>
+              <a href="services.html#ceramic-coating-maintenance" class="nav-dropdown__link">Ceramic Coating Maintenance</a>
+            </div>
+          </div>
+        </div>
+      </li>
       <li><a href="contact.html" class="nav-link">Contact</a></li>
     </ul>
     <div class="nav-actions">
@@ -31,7 +59,30 @@
   <ul class="mobile-menu" id="mobileMenu">
     <li><a href="index.html">Home</a></li>
     <li><a href="about.html">About</a></li>
-    <li><a href="services.html">Services</a></li>
+    <li>
+      <div class="mobile-dropdown-row">
+        <a href="services.html">Services</a>
+        <button type="button" class="mobile-submenu-toggle" aria-controls="servicesSubmenu" aria-expanded="false" aria-label="Toggle Services submenu">
+          <svg width="14" height="14" viewBox="0 0 10 6" fill="none" aria-hidden="true"><path d="M1 1l4 4 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </button>
+      </div>
+      <ul class="mobile-submenu" id="servicesSubmenu">
+        <li class="mobile-submenu__heading"><a href="services.html#full-detail">Vehicle Detail</a></li>
+        <li><a href="services.html#interior-detail">Interior Detail</a></li>
+        <li><a href="services.html#exterior-detail">Exterior Detail</a></li>
+        <li><a href="services.html#full-car-detail">Full Car Detail</a></li>
+        <li class="mobile-submenu__heading"><a href="services.html#paint-correction">Paint Correction</a></li>
+        <li><a href="services.html#paint-correction-sedan">Sedan</a></li>
+        <li><a href="services.html#paint-correction-suv-truck">SUV / Truck</a></li>
+        <li class="mobile-submenu__heading"><a href="services.html#ceramic-coating">Ceramic Coating</a></li>
+        <li><a href="services.html#ceramic-coating-paint">Paint</a></li>
+        <li><a href="services.html#ceramic-coating-glass">Glass</a></li>
+        <li><a href="services.html#ceramic-coating-trim">Trim</a></li>
+        <li class="mobile-submenu__heading"><a href="services.html#maintenance-detail">Maintenance</a></li>
+        <li><a href="services.html#regular-maintenance">Monthly Maintenance</a></li>
+        <li><a href="services.html#ceramic-coating-maintenance">Ceramic Coating Maintenance</a></li>
+      </ul>
+    </li>
     <li><a href="contact.html">Contact</a></li>
     <li><a href="contact.html" class="mobile-cta">Request a Quote</a></li>
   </ul>
@@ -40,7 +91,6 @@
 <header class="hero hero--page">
   <div class="hero-bg"></div>
   <div class="hero-content" style="max-width:900px;margin:0 auto;text-align:center">
-    <p class="eyebrow">Services</p>
     <h1 class="h-display h-page">Three core services<br>Two Maintenance<br>One Standard</h1>
     <p class="lede" style="margin:24px auto 0;max-width:600px">Every service starts with an inspection and ends with a walkthrough. Drop-off or mobile - the process doesnt change.</p>
     <div style="display:flex;gap:24px;justify-content:center;margin-top:36px;flex-wrap:wrap">
@@ -69,7 +119,7 @@
         <li><span>—</span>Surface protectant on exterior finishes</li>
       </ul>
       <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--steel);margin:0 0 26px"><strong style="color:var(--chrome-3)">Ideal for:</strong> daily drivers due for a refresh, families prepping for a trip, or owners getting a vehicle ready to sell.</p>
-      <a href="contact.html" class="btn btn-gold btn-sm">Request a Full Detail Quote <span aria-hidden="true">→</span></a>
+      <a href="contact.html" class="btn btn-gold btn-sm">Request a Vehicle Detail Quote <span aria-hidden="true">→</span></a>
     </div>
     <div>
       <div style="aspect-ratio:4/3;overflow:hidden;margin-bottom:24px">
@@ -91,6 +141,47 @@
         </details>
       </div>
     </div>
+  </div>
+  <div class="container subservice-intro" style="margin-top:56px">
+    <h3>Choose Your Vehicle Detail</h3>
+    <p>Pick the scope that matches what your vehicle actually needs — interior only, exterior only, or the full transformation.</p>
+  </div>
+  <div class="container subservice-grid-3">
+    <div id="interior-detail" class="subservice-card">
+      <h4>Interior Detail</h4>
+      <span class="price-tag">Starting At $150</span>
+      <p>A deep clean focused entirely on the cabin — for vehicles that need fresh air and surfaces more than exterior correction.</p>
+      <ul>
+        <li><span>—</span>Full blow-out and vacuum of seats, carpets &amp; trunk</li>
+        <li><span>—</span>Brush cleaning of all cracks, crevices, vents, etc.</li>
+        <li><span>—</span>Dashboard, console &amp; door panel detailing</li>
+        <li><span>—</span>Door jamb cleaning</li>
+        <li><span>—</span>Streak-free window cleaning</li>
+        <li><span>—</span>Non-slick rubber floor mat sealants</li>
+      </ul>    </div>
+    <div id="exterior-detail" class="subservice-card">
+      <h4>Exterior Detail</h4>
+      <span class="price-tag">Starting At $130</span>
+      <p>A thorough exterior-only refresh — wash, wheels, and protection, without interior service.</p>
+      <ul>
+        <li><span>—</span>Pre-soak vehicle</li>
+        <li><span>—</span>Contact wash vehicle</li>
+        <li><span>—</span>Wheel wells &amp; deep wheel cleaning</li>
+        <li><span>—</span>Non-sling tire dressing</li>
+        <li><span>—</span>Streak-free window cleaning</li>
+        <li><span>—</span>2-3 month premium foam sealant</li>
+      </ul>    </div>
+    <div id="full-car-detail" class="subservice-card">
+      <h4>Full Car Detail</h4>
+      <span class="price-tag">Starting At $250</span>
+      <p>The complete interior + exterior transformation — every surface addressed in one visit, as described above.</p>
+      <ul>
+        <li><span>—</span>Everything in Interior Detail</li>
+        <li><span>—</span>Everything in Exterior Detail</li>
+        <li><span>—</span>Fabric/leather conditioning</li>
+        <li><span>—</span>Bug / tar paint treatment</li>
+        <li><span>—</span>Combined, single-visit scheduling</li>
+      </ul>    </div>
   </div>
 </section>
 
@@ -126,13 +217,47 @@
         <li><span>—</span>Full paint inspection under proper lighting</li>
         <li><span>—</span>Swirl mark &amp; light scratch removal</li>
         <li><span>—</span>Etched water spot removal &amp; gloss restoration</li>
-        <li><span>—</span>One, or two-stage polishing options</li>
+        <li><span>—</span>Enhancement, one or two step correction</li>
         <li><span>—</span>Panel-by-panel quality check</li>
         <li><span>—</span>Recommended aftercare guidance</li>
       </ul>
       <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--steel);margin:0 0 26px"><strong style="color:var(--chrome-3)">Ideal for:</strong> vehicles with visible swirls or dullness, pre-ceramic prep, or owners restoring resale value.</p>
       <a href="contact.html" class="btn btn-gold btn-sm">Request a Paint Correction Quote <span aria-hidden="true">→</span></a>
     </div>
+  </div>
+  <div class="container subservice-intro" style="margin-top:56px">
+    <h3>Choose Your Vehicle Size</h3>
+    <p>Correction time and scope scale with panel count — pick the option that matches your vehicle.</p>
+  </div>
+  <div class="container subservice-grid-2">
+    <div id="paint-correction-sedan" class="subservice-card">
+      <h4>Sedan</h4>
+      <ul class="tier-pricing">
+        <li><span>Paint Enhancement</span><strong>$400</strong></li>
+        <li><span>1-Step Correction</span><strong>$500</strong></li>
+        <li><span>2-Step Correction</span><strong>$700</strong></li>
+      </ul>
+      <p>Correction scoped for sedans and coupes — full panel coverage sized to your vehicle.</p>
+      <ul>
+        <li><span>—</span>Full paint inspection under proper lighting</li>
+        <li><span>—</span>Swirl mark &amp; light scratch removal</li>
+        <li><span>—</span>One or two-stage polishing options</li>
+        <li><span>—</span>Panel-by-panel quality check</li>
+      </ul>    </div>
+    <div id="paint-correction-suv-truck" class="subservice-card">
+      <h4>SUV / Truck</h4>
+      <ul class="tier-pricing">
+        <li><span>Paint Enhancement</span><strong>$500</strong></li>
+        <li><span>1-Step Correction</span><strong>$700</strong></li>
+        <li><span>2-Step Correction</span><strong>$900</strong></li>
+      </ul>
+      <p>Correction scoped for the larger panel area and additional surfaces of SUVs and trucks.</p>
+      <ul>
+        <li><span>—</span>Full paint inspection under proper lighting</li>
+        <li><span>—</span>Swirl mark &amp; light scratch removal across larger panels</li>
+        <li><span>—</span>One or two-stage polishing options</li>
+        <li><span>—</span>Panel-by-panel quality check</li>
+      </ul>    </div>
   </div>
 </section>
 
@@ -176,6 +301,46 @@
       </div>
     </div>
   </div>
+  <div class="container subservice-intro" style="margin-top:56px">
+    <h3>Choose Your Coverage</h3>
+    <p>Gyeon® ceramic protection can be applied to paint, glass, and trim independently — or combined for full coverage.</p>
+  </div>
+  <div class="container subservice-grid-3">
+    <div id="ceramic-coating-paint" class="subservice-card">
+      <h4>Paint</h4>
+      <ul class="tier-pricing">
+        <li><span>1 Year</span><strong>$150</strong></li>
+        <li><span>3 Year</span><strong>$300</strong></li>
+        <li><span>5 Year</span><strong>$500</strong></li>
+      </ul>
+      <p>Gyeon-certified ceramic protection applied to your vehicle's exterior paint. Added on top of your selected Paint Enhancement or Correction tier.</p>
+      <ul>
+        <li><span>—</span>Intense water beading and repellency</li>
+        <li><span>—</span>UV resistance against fading and oxidation</li>
+        <li><span>—</span>Deeper, wet-look gloss</li>
+        <li><span>—</span>Easier maintenance washes over time</li>
+      </ul>    </div>
+    <div id="ceramic-coating-glass" class="subservice-card">
+      <h4>Glass</h4>
+      <span class="price-tag">$150</span>
+      <p>Hydrophobic ceramic coating for windshield and windows — better visibility in rain, easier bug and water-spot removal.</p>
+      <ul>
+        <li><span>—</span>Improved visibility during rain</li>
+        <li><span>—</span>Reduces water spotting</li>
+        <li><span>—</span>Easier bug &amp; debris cleanup</li>
+        <li><span>—</span>Long-lasting clarity</li>
+      </ul>    </div>
+    <div id="ceramic-coating-trim" class="subservice-card">
+      <h4>Trim</h4>
+      <span class="price-tag">$150</span>
+      <p>Protective ceramic coating for plastic and rubber trim — keeps trim looking rich instead of fading gray.</p>
+      <ul>
+        <li><span>—</span>Prevents sun-fading &amp; graying</li>
+        <li><span>—</span>Repels water and dirt</li>
+        <li><span>—</span>Restores a factory-fresh look</li>
+        <li><span>—</span>Long-lasting protection</li>
+      </ul>    </div>
+  </div>
 </section>
 
 <!-- MAINTENANCE DETAIL -->
@@ -198,18 +363,51 @@
       <a href="contact.html" class="btn btn-gold btn-sm">Request a Maintenance Detail <span aria-hidden="true">→</span></a>
     </div>
     <div>
-      <div class="pricing-card">
-        <p class="starting-at">Starting At</p>
-        <p class="price">$99</p>
-        <ul>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Exterior hand wash</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Interior vacuum</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Dashboard, console &amp; door panel wipe down</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Interior &amp; exterior glass cleaning</li>
-          <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"></path></svg>Spray sealant of ceramic booster added as needed</li>
+      <div style="aspect-ratio:4/3;overflow:hidden;margin-bottom:24px">
+        <img src="assets/service-maintenance.png" alt="Honda Accord after a Bravura maintenance visit" style="width:100%;height:100%;object-fit:cover" />
+      </div>
+      <div class="faq-panel">
+        <h3>Why Maintenance Matters</h3>
+        <ul class="included-list" style="margin:0">
+          <li><span>—</span>Keeps your ceramic coating's gloss and water-beading performing like day one</li>
+          <li><span>—</span>Prevents dirt, brake dust, and contaminants from breaking down a fresh detail</li>
+          <li><span>—</span>Extends the life of your protection between full services</li>
         </ul>
       </div>
     </div>
+  </div>
+  <div class="container subservice-intro" style="margin-top:56px">
+    <h3>Choose Your Maintenance Plan</h3>
+    <p>Regular upkeep for any recent detail, or a dedicated visit for vehicles with an existing Bravura ceramic coating.</p>
+  </div>
+  <div class="container subservice-grid-2">
+    <div id="regular-maintenance" class="subservice-card">
+      <h4>Monthly Maintenance</h4>
+      <ul class="tier-pricing">
+        <li><span>Sedan</span><strong>$99</strong></li>
+        <li><span>SUV / Truck</span><strong>$149</strong></li>
+      </ul>
+      <p>A recurring light-touch visit that keeps a recent Full Detail or ceramic coating looking sharp between full services.</p>
+      <ul>
+        <li><span>—</span>Exterior hand wash</li>
+        <li><span>—</span>Interior vacuum</li>
+        <li><span>—</span>Dashboard, console &amp; door panel wipe down</li>
+        <li><span>—</span>Interior &amp; exterior glass cleaning</li>
+        <li><span>—</span>Spray sealant or ceramic booster added as needed</li>
+      </ul>    </div>
+    <div id="ceramic-coating-maintenance" class="subservice-card">
+      <h4>Ceramic Coating Maintenance</h4>
+      <ul class="tier-pricing">
+        <li><span>Sedan</span><strong>$149</strong></li>
+        <li><span>SUV / Truck</span><strong>$199</strong></li>
+      </ul>
+      <p>Keeps an existing Gyeon ceramic coating performing like new — a lighter, coating-safe visit for vehicles with a Bravura-applied coating that need a refresh.</p>
+      <ul>
+        <li><span>—</span>Decontamination wash safe for coated surfaces</li>
+        <li><span>—</span>Ceramic booster / topper application</li>
+        <li><span>—</span>Water-beading &amp; gloss check</li>
+        <li><span>—</span>Coating health inspection</li>
+      </ul>    </div>
   </div>
 </section>
 
@@ -244,8 +442,7 @@
         <img src="assets/bravura-logo.png" alt="Bravura Detailing" class="footer-logo" />
         <p class="footer-blurb">Premium drop-off and mobile auto detailing across the Phoenix metro. Correction, ceramic protection, and interior restoration — done to a concours standard.</p>
         <div class="social-row">
-          <a href="#" aria-label="Instagram" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
-          <a href="#" aria-label="Facebook" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/bravuraautodetailing/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
           <a href="#" aria-label="Google" class="social-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 8v4l3 2"/><circle cx="12" cy="12" r="9"/></svg></a>
         </div>
       </div>

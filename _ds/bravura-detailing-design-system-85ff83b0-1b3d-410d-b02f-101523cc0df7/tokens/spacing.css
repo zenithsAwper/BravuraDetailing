@@ -1,0 +1,54 @@
+/* ------------------------------------------------------------------
+   BRAVURA DETAILING — Spacing, radii, elevation, layout tokens
+   Base unit 8px. Zero radius is the law — only switches round.
+------------------------------------------------------------------ */
+:root {
+  /* --- Spacing scale --- */
+  --sp-2: 2px;
+  --sp-4: 4px;
+  --sp-5: 5px;
+  --sp-8: 8px;
+  --sp-10: 10px;
+  --sp-12: 12px;
+  --sp-15: 15px;
+  --sp-16: 16px;
+  --sp-20: 20px;
+  --sp-24: 24px;
+  --sp-32: 32px;
+  --sp-40: 40px;
+  --sp-48: 48px;
+  --sp-56: 56px;
+
+  /* --- Component padding --- */
+  --pad-ghost: 16px;
+  --pad-accent: 24px;
+  --pad-section-y: 56px;
+  --pad-section-x: 40px;
+
+  /* --- Border radius — sharp is non-negotiable --- */
+  --radius-0: 0px;      /* everything: buttons, cards, images */
+  --radius-1: 1px;      /* subtle spans */
+  --radius-2: 2px;      /* badges, close buttons */
+  --radius-switch: 20px;/* the sole rounded element */
+
+  /* --- Borders --- */
+  --border-w: 1px;
+
+  /* --- Elevation (surface layering, not shadow) --- */
+  --elev-0: var(--abyss);      /* Abyss */
+  --elev-1: var(--iron);       /* Surface */
+  --elev-1b: var(--charcoal);  /* Surface (card) */
+  --elev-2: var(--overlay-70); /* Overlay */
+  --elev-3: var(--overlay-50); /* Fog */
+  --elev-4: var(--overlay-25); /* Mist */
+
+  /* --- Layout --- */
+  --container-max: 1440px;
+  --content-max: 1200px;
+
+  /* --- Motion — color-only, no scale/translate --- */
+  --ease: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --dur-fast: 120ms; /* @kind other */
+  --dur: 200ms; /* @kind other */
+  --dur-slow: 320ms; /* @kind other */
+}

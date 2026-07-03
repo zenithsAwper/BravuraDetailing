@@ -1,0 +1,51 @@
+/* ------------------------------------------------------------------
+   BRAVURA DETAILING — Typography tokens
+   Single-typeface discipline. Display shouts in uppercase at extreme
+   scale with tight line-heights. Weight 400 carries headlines.
+------------------------------------------------------------------ */
+:root {
+  /* --- Families --- */
+  --font-display: 'Saira', 'Saira Condensed', 'Helvetica Neue', Arial, sans-serif;
+  --font-body:    'Saira', 'Barlow', 'Helvetica Neue', Arial, sans-serif;
+  --font-ui:      'Barlow', 'Saira', 'Helvetica Neue', Arial, sans-serif;
+
+  /* --- Weights --- */
+  --fw-light: 300; /* @kind font */
+  --fw-regular: 400; /* @kind font */
+  --fw-medium: 500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold: 700; /* @kind font */
+  --fw-black: 900; /* @kind font */
+
+  /* --- Type scale (px) --- */
+  --fs-hero: 120px;    /* Hero display */
+  --fs-display: 80px;  /* Display 2 */
+  --fs-section: 54px;  /* Section title */
+  --fs-subsection: 40px;
+  --fs-feature: 27px;  /* Feature heading */
+  --fs-card-title: 24px;
+  --fs-body-lg: 18px;
+  --fs-body: 16px;
+  --fs-button: 16px;
+  --fs-button-sm: 14.4px;
+  --fs-button-xs: 13px;
+  --fs-caption: 14px;
+  --fs-label: 12px;
+  --fs-micro: 10px;
+
+  /* --- Line heights --- */
+  --lh-hero: 0.92; /* @kind other */
+  --lh-display: 1.13; /* @kind other */
+  --lh-section: 1.19; /* @kind other */
+  --lh-subsection: 1.15; /* @kind other */
+  --lh-feature: 1.37; /* @kind other */
+  --lh-body: 1.50; /* @kind other */
+  --lh-body-lg: 1.56; /* @kind other */
+  --lh-tight: 1.00; /* @kind other */
+
+  /* --- Letter spacing --- */
+  --ls-caption: -0.42px;  /* negative tracking, technical feel */
+  --ls-label: 0.96px;     /* positive tracking on small uppercase */
+  --ls-micro: 0.225px;
+  --ls-button: 0.2px;
+}

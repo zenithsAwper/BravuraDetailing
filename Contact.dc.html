@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <title>Contact Bravura Detailing | Request a Quote in Mesa, Gilbert, Scottsdale &amp; Phoenix, AZ</title>
+  <meta name="description" content="Request a detailing quote from Bravura Detailing. We reply within one business day. Drop-off and mobile service across Mesa, Gilbert, Scottsdale, and Phoenix, Arizona.">
+  <link rel="stylesheet" href="_ds/bravura-detailing-design-system-85ff83b0-1b3d-410d-b02f-101523cc0df7/tokens/fonts.css">
+  <link rel="stylesheet" href="_ds/bravura-detailing-design-system-85ff83b0-1b3d-410d-b02f-101523cc0df7/tokens/colors.css">
+  <link rel="stylesheet" href="_ds/bravura-detailing-design-system-85ff83b0-1b3d-410d-b02f-101523cc0df7/tokens/typography.css">
+  <link rel="stylesheet" href="_ds/bravura-detailing-design-system-85ff83b0-1b3d-410d-b02f-101523cc0df7/tokens/spacing.css">
+  <link rel="stylesheet" href="_ds/bravura-detailing-design-system-85ff83b0-1b3d-410d-b02f-101523cc0df7/styles.css">
+  <script src="_ds/bravura-detailing-design-system-85ff83b0-1b3d-410d-b02f-101523cc0df7/_ds_bundle.js"></script>
+  <style>
+    html{scroll-behavior:smooth}
+    body{margin:0;background:#000}
+    .bd-contact-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:start}
+    .bd-field-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .bd-grid-2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+    @media (max-width:980px){
+      .bd-contact-grid{grid-template-columns:1fr}
+      .bd-field-grid{grid-template-columns:1fr}
+      .bd-grid-2{grid-template-columns:1fr}
+      .bd-sec{padding:70px 24px!important}
+    }
+    .bd-input{width:100%;box-sizing:border-box;padding:14px 16px;background-color:var(--charcoal);color:#fff;border-width:1px;border-style:solid;border-color:var(--border-hairline);font-family:var(--font-body);font-size:15px;outline:none}
+    .bd-input:focus{border-color:var(--gold)}
+    .bd-label{display:block;font-family:var(--font-display);text-transform:uppercase;font-size:12px;letter-spacing:1px;color:var(--chrome-3);margin-bottom:8px}
+  </style>
+</helmet>
+<div style="background:#000">
+  <dc-import name="SiteNav" active="Contact" hint-size="100%,72px"></dc-import>
+
+  <header style="position:relative;padding:170px 40px 60px;overflow:hidden;box-sizing:border-box" data-screen-label="Contact Hero">
+    <div style="position:absolute;inset:0;background:radial-gradient(120% 90% at 50% 0%,#2c2c2a 0%,#111 46%,#000 80%)"></div>
+    <div style="position:relative;z-index:2;max-width:900px;margin:0 auto;text-align:center">
+      <p style="font-family:var(--font-display);text-transform:uppercase;font-size:12px;letter-spacing:2.4px;color:var(--gold-text);font-weight:500;margin:0">Contact</p>
+      <h1 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;color:#fff;line-height:1.2;margin:16px 0 0;font-size:clamp(32px,5vw,54px)">Let's talk about your vehicle</h1>
+      <p style="font-family:var(--font-body);font-size:18px;line-height:1.6;color:var(--ash);margin:34px auto 0;max-width:600px">Tell us a bit about what you're driving and what you want done. We reply within one business day with a clear, honest quote.</p>
+    </div>
+  </header>
+
+  <!-- FORM + SIDEBAR -->
+  <section class="bd-sec" style="padding:20px 40px 100px;background:#000">
+    <div style="max-width:1200px;margin:0 auto" class="bd-contact-grid">
+
+      <!-- FORM -->
+      <div style="background-color:var(--charcoal);padding:40px">
+        <sc-if value="{{ submitted }}" hint-placeholder-val="{{ false }}">
+          <div style="text-align:center;padding:60px 20px">
+            <div style="width:56px;height:56px;border-radius:50%;background-color:var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 24px">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="var(--abyss)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            </div>
+            <h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;color:#fff;margin:0 0 12px;font-size:28px">Request received</h2>
+            <p style="font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ash);margin:0 0 6px">Thanks, {{ lastName }} — we've got your details.</p>
+            <p style="font-family:var(--font-body);font-size:16px;line-height:1.6;color:var(--ash);margin:0">Expect a reply at your email or phone within <strong style="color:#fff">one business day</strong>.</p>
+          </div>
+        </sc-if>
+        <sc-if value="{{ notSubmitted }}" hint-placeholder-val="{{ true }}">
+          <h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;color:#fff;margin:0 0 28px;font-size:26px">Request a Quote</h2>
+          <form onSubmit="{{ handleSubmit }}">
+            <div class="bd-field-grid" style="margin-bottom:18px">
+              <div>
+                <label class="bd-label" for="name">Full Name</label>
+                <input class="bd-input" id="name" type="text" required="{{ true }}" value="{{ formName }}" onChange="{{ setName }}" />
+              </div>
+              <div>
+                <label class="bd-label" for="phone">Phone</label>
+                <input class="bd-input" id="phone" type="tel" required="{{ true }}" value="{{ formPhone }}" onChange="{{ setPhone }}" />
+              </div>
+            </div>
+            <div style="margin-bottom:18px">
+              <label class="bd-label" for="email">Email</label>
+              <input class="bd-input" id="email" type="email" required="{{ true }}" value="{{ formEmail }}" onChange="{{ setEmail }}" />
+            </div>
+            <div class="bd-field-grid" style="margin-bottom:18px">
+              <div>
+                <label class="bd-label" for="vehicle">Vehicle Make &amp; Model</label>
+                <input class="bd-input" id="vehicle" type="text" placeholder="e.g. 2022 Tesla Model Y" value="{{ formVehicle }}" onChange="{{ setVehicle }}" />
+              </div>
+              <div>
+                <label class="bd-label" for="date">Preferred Appointment Date</label>
+                <input class="bd-input" id="date" type="date" value="{{ formDate }}" onChange="{{ setDate }}" />
+              </div>
+            </div>
+            <div class="bd-field-grid" style="margin-bottom:18px">
+              <div>
+                <label class="bd-label" for="service">Desired Service</label>
+                <select class="bd-input" id="service" value="{{ formService }}" onChange="{{ setService }}">
+                  <option value="">Select a service</option>
+                  <option value="Full Detail">Full Detail</option>
+                  <option value="Paint Correction">Paint Correction</option>
+                  <option value="Ceramic Coating">Ceramic Coating</option>
+                  <option value="Maintenance Detail">Maintenance Detail</option>
+                  <option value="Not Sure">Not sure yet</option>
+                </select>
+              </div>
+              <div>
+                <label class="bd-label">Preferred Service Type</label>
+                <div style="display:flex;gap:10px">
+                  <button type="button" onClick="{{ selectDropoff }}" style="{{ dropoffBtnStyle }}">Drop-Off</button>
+                  <button type="button" onClick="{{ selectMobile }}" style="{{ mobileBtnStyle }}">Mobile</button>
+                </div>
+              </div>
+            </div>
+            <div style="margin-bottom:26px">
+              <label class="bd-label" for="message">Message</label>
+              <textarea class="bd-input" id="message" rows="4" placeholder="Tell us about your vehicle's condition and what you're hoping for." value="{{ formMessage }}" onChange="{{ setMessage }}"></textarea>
+            </div>
+            <sc-if value="{{ error }}" hint-placeholder-val="{{ false }}">
+              <p style="font-family:var(--font-body);font-size:14px;color:#e05a5a;margin:0 0 16px">{{ error }}</p>
+            </sc-if>
+            <button type="submit" disabled="{{ submitting }}" style="{{ submitBtnStyle }}">{{ submitBtnLabel }}</button>
+          </form>
+        </sc-if>
+      </div>
+
+      <!-- SIDEBAR -->
+      <div style="display:flex;flex-direction:column;gap:24px">
+        <div style="background-color:var(--iron);padding:32px">
+          <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:14px;letter-spacing:1px;color:var(--gold-text);margin:0 0 18px">Direct Contact</h3>
+          <a href="tel:4808154711" style="display:block;font-family:var(--font-body);font-size:17px;color:#fff;text-decoration:none;margin-bottom:10px" style-hover="color:var(--gold)">480-815-4711</a>
+          <a href="mailto:QuoteMe@BravuraDetailing.com" style="display:block;font-family:var(--font-body);font-size:17px;color:#fff;text-decoration:none" style-hover="color:var(--gold)">QuoteMe@BravuraDetailing.com</a>
+        </div>
+        <div style="background-color:var(--iron);padding:32px">
+          <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:14px;letter-spacing:1px;color:var(--gold-text);margin:0 0 18px">Business Hours</h3>
+          <div style="display:flex;justify-content:space-between;font-family:var(--font-body);font-size:15px;color:var(--ash);margin-bottom:8px"><span>Saturday</span><span style="color:#fff">6:30 AM – 8:00 PM</span></div>
+          <div style="display:flex;justify-content:space-between;font-family:var(--font-body);font-size:15px;color:var(--ash)"><span>Sunday</span><span style="color:#fff">6:30 AM – 8:00 PM</span></div>
+        </div>
+        <div style="background-color:var(--iron);padding:32px">
+          <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:14px;letter-spacing:1px;color:var(--gold-text);margin:0 0 18px">Service Area</h3>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.7;color:var(--ash);margin:0">Mesa · Gilbert · Scottsdale · Phoenix</p>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--steel);margin:12px 0 0">Drop-off available at our Mesa location. Mobile service reaches the full metro area.</p>
+        </div>
+        <div style="background-color:var(--iron);padding:32px">
+          <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:14px;letter-spacing:1px;color:var(--gold-text);margin:0 0 18px">Response Time</h3>
+          <p style="font-family:var(--font-body);font-size:15px;line-height:1.7;color:var(--ash);margin:0">Every quote request gets a reply within <strong style="color:#fff">one business day</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section style="padding:0 40px 100px;background:#000">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="aspect-ratio:16/5;background-color:var(--iron);border-width:1px;border-style:solid;border-color:var(--border-hairline);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden">
+        <div style="position:absolute;inset:0;background:radial-gradient(60% 100% at 30% 40%,rgba(255,192,0,.06),transparent 70%)"></div>
+        <div style="position:relative;text-align:center">
+          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="1.5" style="margin:0 auto 12px;display:block"><path d="M12 21s-7-6.5-7-11a7 7 0 0 1 14 0c0 4.5-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <p style="font-family:var(--font-display);text-transform:uppercase;font-size:13px;letter-spacing:1px;color:var(--chrome-3);margin:0">Service map — Mesa, Gilbert, Scottsdale &amp; Phoenix, AZ</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bd-sec" style="padding:20px 40px 110px;background:#000">
+    <div style="max-width:900px;margin:0 auto">
+      <h2 style="font-family:var(--font-display);text-transform:uppercase;font-weight:400;color:#fff;line-height:1.05;margin:0 0 32px;font-size:clamp(28px,4vw,40px);text-align:center">Common Questions</h2>
+      <div class="bd-grid-2">
+        <div style="background-color:var(--charcoal);padding:26px">
+          <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:15px;color:#fff;margin:0 0 10px">How fast will I hear back?</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--ash);margin:0">Within one business day of submitting your request, with a clear scope and price.</p>
+        </div>
+        <div style="background-color:var(--charcoal);padding:26px">
+          <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:15px;color:#fff;margin:0 0 10px">What areas do you serve?</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--ash);margin:0">Mesa, Gilbert, Scottsdale, and Phoenix — by drop-off or mobile appointment.</p>
+        </div>
+        <div style="background-color:var(--charcoal);padding:26px">
+          <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:15px;color:#fff;margin:0 0 10px">Do you require a deposit?</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--ash);margin:0">Some services may require a deposit to hold your appointment — we'll confirm this when your quote is sent.</p>
+        </div>
+        <div style="background-color:var(--charcoal);padding:26px">
+          <h3 style="font-family:var(--font-display);text-transform:uppercase;font-size:15px;color:#fff;margin:0 0 10px">What if I'm not sure which service I need?</h3>
+          <p style="font-family:var(--font-body);font-size:14px;line-height:1.6;color:var(--ash);margin:0">Just describe your vehicle's condition — we'll recommend the right service in your quote.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <dc-import name="SiteFooter" hint-size="100%,460px"></dc-import>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+// STEP 1: Create a free account at https://formspree.io using QuoteMe@BravuraDetailing.com
+// STEP 2: Create a new form there, verify the email when Formspree emails you
+// STEP 3: Copy the Form ID it gives you (looks like "abcdwxyz") and paste it below
+const FORMSPREE_FORM_ID = 'YOUR_FORM_ID';
+
+class Component extends DCLogic {
+  state = {
+    submitted: false,
+    submitting: false,
+    error: '',
+    name: '', phone: '', email: '', vehicle: '', date: '', service: '', message: '',
+    serviceType: '',
+  };
+
+  renderVals() {
+    const s = this.state;
+    return {
+      submitted: s.submitted,
+      notSubmitted: !s.submitted,
+      lastName: (s.name.trim().split(' ')[0]) || 'there',
+      formName: s.name,
+      formPhone: s.phone,
+      formEmail: s.email,
+      formVehicle: s.vehicle,
+      formDate: s.date,
+      formService: s.service,
+      formMessage: s.message,
+      setName: (e) => this.setState({ name: e.target.value }),
+      setPhone: (e) => this.setState({ phone: e.target.value }),
+      setEmail: (e) => this.setState({ email: e.target.value }),
+      setVehicle: (e) => this.setState({ vehicle: e.target.value }),
+      setDate: (e) => this.setState({ date: e.target.value }),
+      setService: (e) => this.setState({ service: e.target.value }),
+      setMessage: (e) => this.setState({ message: e.target.value }),
+      selectDropoff: () => this.setState({ serviceType: 'Drop-Off' }),
+      selectMobile: () => this.setState({ serviceType: 'Mobile' }),
+      dropoffBtnStyle: `flex:1;padding:14px;font-family:var(--font-display);text-transform:uppercase;font-size:13px;letter-spacing:.5px;cursor:pointer;border-width:1px;border-style:solid;border-color:${s.serviceType === 'Drop-Off' ? 'var(--gold)' : 'var(--border-hairline)'};background-color:${s.serviceType === 'Drop-Off' ? 'var(--gold)' : 'transparent'};color:${s.serviceType === 'Drop-Off' ? 'var(--abyss)' : 'var(--chrome-3)'}`,
+      mobileBtnStyle: `flex:1;padding:14px;font-family:var(--font-display);text-transform:uppercase;font-size:13px;letter-spacing:.5px;cursor:pointer;border-width:1px;border-style:solid;border-color:${s.serviceType === 'Mobile' ? 'var(--gold)' : 'var(--border-hairline)'};background-color:${s.serviceType === 'Mobile' ? 'var(--gold)' : 'transparent'};color:${s.serviceType === 'Mobile' ? 'var(--abyss)' : 'var(--chrome-3)'}`,
+      submitting: s.submitting,
+      error: s.error,
+      submitBtnLabel: s.submitting ? 'Sending…' : 'Submit Request',
+      submitBtnStyle: `width:100%;padding:18px;background-color:var(--gold);color:var(--abyss);font-family:var(--font-display);text-transform:uppercase;font-size:15px;letter-spacing:.5px;font-weight:500;border:none;cursor:${s.submitting ? 'default' : 'pointer'};opacity:${s.submitting ? 0.7 : 1}`,
+      handleSubmit: (e) => {
+        e.preventDefault();
+        if (this.state.submitting) return;
+        this.setState({ submitting: true, error: '' });
+        fetch(`https://formspree.io/f/${FORMSPREE_FORM_ID}`, {
+          method: 'POST',
+          headers: { 'Accept': 'application/json', 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: this.state.name,
+            phone: this.state.phone,
+            email: this.state.email,
+            vehicle: this.state.vehicle,
+            preferredDate: this.state.date,
+            service: this.state.service,
+            serviceType: this.state.serviceType,
+            message: this.state.message,
+            _replyto: this.state.email,
+            _subject: `New quote request from ${this.state.name || 'website visitor'}`,
+          }),
+        }).then((res) => {
+          if (res.ok) {
+            this.setState({ submitted: true, submitting: false });
+          } else {
+            this.setState({ submitting: false, error: 'Something went wrong sending your request — please call or text us at 480-815-4711 instead.' });
+          }
+        }).catch(() => {
+          this.setState({ submitting: false, error: 'Something went wrong sending your request — please call or text us at 480-815-4711 instead.' });
+        });
+      },
+    };
+  }
+}
+</script>
+</body>
+</html>

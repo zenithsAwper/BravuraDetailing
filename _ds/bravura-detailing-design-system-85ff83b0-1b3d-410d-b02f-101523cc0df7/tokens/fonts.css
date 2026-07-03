@@ -1,9 +1,0 @@
-/* ------------------------------------------------------------------
-   BRAVURA DETAILING — Webfonts
-   LamboType (the reference brand's proprietary Neo-Grotesk) is not
-   licensable. SUBSTITUTE: "Saira" — a neo-grotesk superfamily with
-   Normal→Condensed widths and 300–900 weights that echoes LamboType's
-   aggressive, technical, aerodynamic character. Flagged in readme.md.
-   Body/UI fallback: "Barlow" (humanist grotesque, close to Open Sans).
------------------------------------------------------------------- */
-@import url('https://fonts.googleapis.com/css2?family=Saira:wght@300;400;500;600;700;800;900&family=Saira+Condensed:wght@400;500;600;700;800&family=Barlow:wght@300;400;500;600;700&display=swap');

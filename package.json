@@ -1,0 +1,11 @@
+{
+  "name": "bravura-detailing",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bravura Detailing marketing website — static HTML/CSS/JS.",
+  "scripts": {
+    "dev": "npx --yes http-server -p 8080 -c-1",
+    "start": "npx --yes http-server -p 8080",
+    "build": "echo \"Static site, nothing to build\""
+  }
+}

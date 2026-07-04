@@ -472,6 +472,7 @@ section[id] { scroll-margin-top: 90px; }
 .subservice-card > .btn { margin-top: auto; }
 .subservice-card h4 { font-family: var(--font-display); text-transform: uppercase; font-size: 19px; font-weight: 400; color: #fff; }
 .subservice-card p { font-family: var(--font-body); font-size: 14.5px; line-height: 1.6; color: var(--ash); }
+.subservice-card p.eyebrow { font-size: 12px; line-height: 1.2; color: var(--gold-text); }
 .subservice-card ul { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 8px; }
 .subservice-card li { font-family: var(--font-body); font-size: 14px; color: var(--ash); display: flex; gap: 8px; }
 .subservice-card li span { color: var(--gold); flex-shrink: 0; }
